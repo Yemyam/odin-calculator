@@ -17,9 +17,14 @@ html, body {
 }
 
 .display {
-    height: 100px;
+    min-height: 40px;
+    max-height: 40px;
     width: auto;
-    background-color: black;
+    background-color: gray;
+    padding: 25px;
+    align-content: center;
+    margin: 10px;
+    margin-bottom: 0;
 }
 
 .input {
@@ -27,4 +32,11 @@ html, body {
     flex-wrap: wrap;
     height: 400px;
     width: auto;
+}
+
+.button {
+    width: 80px;
+    height: 80px;
+    background-color: blue;
+    margin: 10px;
 }
