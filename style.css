@@ -19,11 +19,12 @@ html, body {
 }
 
 .display {
-    min-height: 50px;
-    max-height: 50px;
+    display: block;
+    padding: 10px;
+    min-height: 80px;
+    max-height: 80px;
     width: auto;
     background-color: black;
-    padding: 25px;
     align-content: center;
     color: white;
     text-align: end;
@@ -31,6 +32,20 @@ html, body {
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
     
+}
+
+.lower{
+    font-size: 40px;
+    line-height: 50px;
+    min-height: 50px;
+    vertical-align: middle;
+    
+}
+.upper {
+    font-size: 25px;
+    line-height: 30px;
+    min-height: 30px;
+    vertical-align: middle;
 }
 
 .input {
