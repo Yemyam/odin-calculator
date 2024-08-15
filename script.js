@@ -30,8 +30,9 @@ btns.forEach((btn) => {
     btn.addEventListener("click", (event) => {
         // clear
         if(btn.textContent == "c"){
-            op1 = 0, op2 = "", operator = "";
-            display.textContent = "0";
+            op1 = "0", op2 = "", operator = "";
+            upperDisplay.textContent = "";
+            lowerDisplay.textContent = "0";
         }
         else if(btn.textContent == "="){
             if((!isNaN(op1)) && (!isNaN(op2)) && (isOper(operator))){
@@ -61,7 +62,10 @@ btns.forEach((btn) => {
                 op1 = btn.textContent;
             }
             else if(!isNaN(btn.textContent)){
-                op1 += btn.textContent;
+                // check length is not overflowing display
+                if(op1.length < 17){
+                    op1 += btn.textContent;
+                }
             }
             else if((!isNaN(op1)) && isOper(btn.textContent)){
                 operator = btn.textContent
