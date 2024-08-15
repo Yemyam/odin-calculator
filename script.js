@@ -1,4 +1,7 @@
-// zeroToggle is used for discerning between subtracting from 0 and added a - to an operand
+// TO DO !!!
+// Limit length of operands to 16 or 17
+// add a function that rounds numbers to length
+
 var op1 = "0", op2 ="", operator = "";
 
 function add(op1,op2){
@@ -22,6 +25,10 @@ function operate(op1,op2,operator){
     }
 }
 
+function round(num){
+
+}
+
 const btns = document.querySelectorAll(".button")
 const display = document.querySelector(".display")
 const lowerDisplay = document.querySelector(".lower");
@@ -39,6 +46,8 @@ btns.forEach((btn) => {
                 upperDisplay.textContent = op1 + " " + operator + " " + op2 + " " + "=";
                 console.log(op1,op2,operator)
                 op1 = operate(op1,op2,operator)
+                op2 = "";
+                operator = "";
                 console.log(op1);
                 lowerDisplay.textContent = op1;
             }
@@ -58,14 +67,16 @@ btns.forEach((btn) => {
             //     op1 = btn.textContent;
             // }
             // Check if only digit is 0, if so replace it
-            if((op1 == 0) && (!isNaN(btn.textContent))){
+            if((btn.textContent == ".") && !op1.includes(".")){
+                if(op1.length < 16){
+                    op1 += btn.textContent;
+                }
+            }
+            else if((op1 == "0") && (!isNaN(btn.textContent))){
                 op1 = btn.textContent;
             }
             else if(!isNaN(btn.textContent)){
-                // check length is not overflowing display
-                if(op1.length < 17){
                     op1 += btn.textContent;
-                }
             }
             else if((!isNaN(op1)) && isOper(btn.textContent)){
                 operator = btn.textContent
