@@ -52,16 +52,13 @@ btns.forEach((btn) => {
             }
             else if((!isNaN(op1)) && (!isNaN(op2)) && (isOper(operator))){
                 upperDisplay.textContent = op1 + " " + operator + " " + op2 + " " + "=";
-                console.log(op1,op2,operator)
-                op1 = operate(op1,op2,operator)
+                op1 = String(operate(op1,op2,operator));
                 op2 = "";
                 operator = "";
-                console.log(op1);
                 lowerDisplay.textContent = op1;
             }
         }
         else if(isOper(btn.textContent) && (op1 != "") && (op2 != "")){
-            console.log("hi")
             op1 = operate(op1,op2,operator);
             operator = btn.textContent;
             op2 = ""
@@ -69,8 +66,7 @@ btns.forEach((btn) => {
             upperDisplay.textContent = op1 + " " + operator;
         }
         else if(operator == ""){
-            console.log(btn.textContent)
-            if((btn.textContent == ".") && !op1.includes(".")){
+            if((btn.textContent == ".") && (!op1.includes("."))){
                 if(op1.length < 16){
                     op1 += btn.textContent;
                 }
@@ -95,6 +91,13 @@ btns.forEach((btn) => {
             if(isOper(btn.textContent)){
                 operator = btn.textContent;
                 upperDisplay.textContent = op1 + " " + operator;
+            }
+            else if((btn.textContent == ".") && !op2.includes(".")){
+                console.log("hi")
+                if(op2.length < 16){
+                    op2 += btn.textContent;
+                    lowerDisplay.textContent = op2;
+                }
             }
             else if(!isNaN(btn.textContent)){
                 op2 += btn.textContent;

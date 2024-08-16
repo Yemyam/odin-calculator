@@ -1,7 +1,7 @@
 html, body {
     background-color: #e7e7ea;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     margin: 0;
     height: 100%;
@@ -99,4 +99,23 @@ html, body {
 }
 #clear{
     background-color: red;
+}
+
+.githubLink {
+    font-size: 20px;
+    margin: 5px;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+    transition: .2s;
+}
+a:hover{
+    color:cadetblue;
+    text-shadow: 0 0 10px cadetblue;
+}
+a:visited{
+    color:cadetblue;
+    text-shadow: 0 0 10px cadetblue;
 }
