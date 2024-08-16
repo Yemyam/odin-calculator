@@ -1,20 +1,20 @@
 // TO DO !!!
 // Limit length of operands to 16 or 17
-// add a function that rounds numbers to length
+// Add division by zero error
 
 var op1 = "0", op2 ="", operator = "";
 
 function add(op1,op2){
-    return Number(op1) + Number(op2);
+    return round(Number(op1) + Number(op2));
 }
 function subtract(op1,op2){
-    return Number(op1) - Number(op2);
+    return round(Number(op1) - Number(op2));
 }
 function multiply(op1,op2){
-    return Number(op1) * Number(op2);
+    return round(Number(op1) * Number(op2));
 }
 function divide(op1,op2){
-    return Number(op1) / Number(op2);
+    return round(Number(op1) / Number(op2));
 }
 function operate(op1,op2,operator){
     switch(operator){
@@ -26,7 +26,11 @@ function operate(op1,op2,operator){
 }
 
 function round(num){
-
+    console.log(toString(num).length)
+    if(toString(num).length > 17){
+        return num.toExponential(11);
+    }
+    return num
 }
 
 const btns = document.querySelectorAll(".button")
