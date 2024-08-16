@@ -110,3 +110,28 @@ function isOper(input){
     }
     return false;
 }
+
+// Keyboard support
+// Simulate clicking each button
+document.addEventListener("keyup",(e) => {
+    console.log(e.key)
+    switch(e.key){
+        case "+": return document.getElementById('add').click();
+        case "-": return document.getElementById('subtract').click();
+        case "x": return document.getElementById('multiply').click();
+        case "/": return document.getElementById('divide').click();
+        case "c": return document.getElementById('clear').click();
+        case "=": return document.getElementById('equals').click();
+        case ".": return document.getElementById('.').click();
+        case "0": return document.getElementById('0').click();
+        case "1": return document.getElementById('1').click();
+        case "2": return document.getElementById('2').click();
+        case "3": return document.getElementById('3').click();
+        case "4": return document.getElementById('4').click();
+        case "5": return document.getElementById('5').click();
+        case "6": return document.getElementById('6').click();
+        case "7": return document.getElementById('7').click();
+        case "8": return document.getElementById('8').click();
+        case "9": return document.getElementById('9').click();
+    }
+})

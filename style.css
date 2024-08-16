@@ -5,6 +5,7 @@ html, body {
     align-items: center;
     margin: 0;
     height: 100%;
+    flex-direction: column;
     font-family: Arial, Helvetica, sans-serif;
 }
 
