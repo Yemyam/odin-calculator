@@ -1,6 +1,5 @@
 // TO DO !!!
 // Limit length of operands to 16 or 17
-// Add division by zero error
 
 var op1 = "0", op2 ="", operator = "";
 
