@@ -26,8 +26,7 @@ function operate(op1,op2,operator){
 }
 
 function round(num){
-    console.log(toString(num).length)
-    if(toString(num).length > 17){
+    if(String(num).length > 17){
         return num.toExponential(11);
     }
     return num
@@ -46,7 +45,13 @@ btns.forEach((btn) => {
             lowerDisplay.textContent = "0";
         }
         else if(btn.textContent == "="){
-            if((!isNaN(op1)) && (!isNaN(op2)) && (isOper(operator))){
+            // Division by zero error
+            if((operator == "÷") && (Number(op2) == 0)){
+                upperDisplay.textContent = op1 + " " + operator + " " + op2;
+                op1 = "0", op2 = "", operator = "";
+                lowerDisplay.textContent = "You can't divide by 0"
+            }
+            else if((!isNaN(op1)) && (!isNaN(op2)) && (isOper(operator))){
                 upperDisplay.textContent = op1 + " " + operator + " " + op2 + " " + "=";
                 console.log(op1,op2,operator)
                 op1 = operate(op1,op2,operator)
